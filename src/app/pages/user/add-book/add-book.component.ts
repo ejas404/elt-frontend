@@ -43,7 +43,7 @@ export class AddBookComponent {
   waitUpdate(){
     this.comService.update.subscribe({
       next : res => {
-          this.isUpdate = !this.isUpdate
+          this.isUpdate = true
           this.setForm(res)
       }
     })
@@ -58,33 +58,48 @@ export class AddBookComponent {
     });
   }
 
-  onUpdate(){
-    const publishedDate = this.form.value.publishedDate
-    const formData : CreateBook =  {...this.form.value}
-    formData['publishedDate'] = publishedDate.toISOString()
-    formData['authorId'] = this.userData.userId
-    // this.bookService.createBook(formData).subscribe({
-    //   next : res => {
-    //     console.log(res)
-    //   },
-    //   error : (err) =>{
-    //     this.snbarService.openSnackBar(err.error.message)
-    //    }
-    // })
-  }
-
   onSubmit() {
     const publishedDate = this.form.value.publishedDate
     const formData : CreateBook =  {...this.form.value}
     formData['publishedDate'] = publishedDate.toISOString()
     formData['authorId'] = this.userData.userId
-    this.bookService.createBook(formData).subscribe({
+    
+    if(this.isUpdate){
+      this.updateBook(formData)
+    }
+    this.addBook(formData)
+  }
+
+  updateBook(formData : any){
+    this.bookService.updateBook(formData)
+    .subscribe({
       next : res => {
         console.log(res)
+        this.snbarService.openSnackBar('book updated successfully')
       },
       error : (err) =>{
         this.snbarService.openSnackBar(err.error.message)
        }
     })
   }
+
+  addBook(formData : any){
+    this.bookService.createBook(formData)
+    .subscribe({
+      next : res => {
+        console.log(res)
+        this.snbarService.openSnackBar('book created successfully')
+      },
+      error : (err) =>{
+        this.snbarService.openSnackBar(err.error.message)
+       }
+    })
+  }
+
+  cancelUpdate(){
+    this.form.reset()
+    this.isUpdate = false;
+  }
+
+
 }

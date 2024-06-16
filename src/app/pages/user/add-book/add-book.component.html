@@ -32,7 +32,8 @@
         </mat-error>
       </mat-form-field> <br>
 
-      <button mat-raised-button [disabled]="form.invalid" color="primary" type="submit">Submit</button>
+      <button mat-raised-button [disabled]="form.invalid" color="primary" type="submit">{{isUpdate?'Update':'Submit'}}</button>
+      <button *ngIf="isUpdate" (click)="cancelUpdate()" mat-raised-button  color="warn">Cancel</button>
     </form>
   </div>
 </section>
