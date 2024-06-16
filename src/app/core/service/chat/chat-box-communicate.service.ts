@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { UserDetailsTableModel } from '../../interfaces/table.interface';
+import { Subject } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChatBoxCommunicateService {
-  // private messageSource = new BehaviorSubject<UserDetailsTableModel >({name : "", _id : '', email : ''})
-  // currentUser = this.messageSource.asObservable()
+  private messageSource = new Subject<any>()
+  update = this.messageSource.asObservable()
 
-  // constructor() { }
-  // setChatUser(user : UserDetailsTableModel){
-  //   this.messageSource.next(user)
-  // }
+  constructor() { }
+  
+  setUpdate(id : string){
+    this.messageSource.next(id)
+  }
 }

@@ -11,7 +11,8 @@
             <span>Published on : {{each.publishedDate | dateConvert }}</span>
         </div>
         <div>
-            <button>delete</button>
+            <button (click)="deleteBook(each.id)" >delete</button>
+            <button (click)="callUpdate(each.id)">update</button>
         </div>
     </div>
 </section>
