@@ -11,14 +11,9 @@ mat-sidenav, mat-sidenav-content{
 }
 
 mat-sidenav {
-    background-color: gray;
-    color : black;
-    width: 25%;
+    min-width: 25%;
 }
 
 mat-sidenav-content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    background-color:#eee;
 }

@@ -1,3 +1,17 @@
+<!-- <section>
+    <p *ngFor="let each of books">{{each.title}}</p>
+</section> -->
+
 <section>
-    <p>list-books works!</p>
+    <h1>Your Books</h1>
+    <div *ngFor="let each of books" class="card">
+        <div class="details">
+            <h1>{{each.title}}</h1>
+            <p>{{each.description | titlecase}}</p>
+            <span>Published on : {{each.publishedDate | dateConvert }}</span>
+        </div>
+        <div>
+            <button>delete</button>
+        </div>
+    </div>
 </section>

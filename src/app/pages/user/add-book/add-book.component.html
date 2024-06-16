@@ -1,31 +1,38 @@
-<!-- app.component.html -->
+<section>
+  <div class="author-details">
+      <h1>{{userData.fullName}}</h1>
+      <p>{{userData.userId}}</p>
+  </div>
 
-<h1>Add New Book</h1>
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <mat-form-field class="example-full-width">
-      <mat-label>Title</mat-label>
-      <input matInput formControlName="title" placeholder="Enter the title">
-      <mat-error *ngIf="form.get('title')?.hasError('required')">
-        Title is required
-      </mat-error>
-    </mat-form-field> 
-    <br>
-  
-    <mat-form-field class="example-full-width">
-      <mat-label>Description</mat-label>
-      <textarea matInput formControlName="description" placeholder="Enter the description"></textarea>
-    </mat-form-field>
-  
-    <mat-form-field class="example-full-width">
-      <mat-label>Published Date</mat-label>
-      <input matInput [matDatepicker]="picker" formControlName="publishedDate">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-      <mat-error *ngIf="form.get('publishedDate')?.hasError('required')">
-        Published date is required
-      </mat-error>
-    </mat-form-field> <br>
-  
-    <button mat-raised-button color="primary" type="submit">Submit</button>
-  </form>
-  
+  <!-- form for creating book for the author -->
+  <div>
+    <h3>Add New Book</h3>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <mat-form-field class="example-full-width">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title" placeholder="Enter the title">
+        <mat-error *ngIf="form.get('title')?.hasError('required')">
+          Title is required
+        </mat-error>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description" placeholder="Enter the description"></textarea>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Published Date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="publishedDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="form.get('publishedDate')?.hasError('required')">
+          Published date is required
+        </mat-error>
+      </mat-form-field> <br>
+
+      <button mat-raised-button [disabled]="form.invalid" color="primary" type="submit">Submit</button>
+    </form>
+  </div>
+</section>

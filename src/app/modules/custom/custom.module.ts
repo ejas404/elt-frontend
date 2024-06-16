@@ -37,7 +37,8 @@ import { TimeStampConvertPipe } from '../../shared/pipes/timestamp-convert.pipe'
         NavbarComponent,
         LogoutBtn,
         TableComponent,
-        ChatUserListComponent
+        ChatUserListComponent,
+        TimeStampConvertPipe
     ]
 })
 export class CustomModule { }

@@ -5,8 +5,7 @@ import { UserData } from '../../../core/interfaces/auth.interface';
 @Component({
   selector: 'app-user-dashboard',
   templateUrl: './user-dashboard.component.html',
-  styleUrl: './user-dashboard.component.scss',
-  changeDetection : ChangeDetectionStrategy.OnPush
+  styleUrl: './user-dashboard.component.scss'
 })
 export class UserDashboardComponent {
   userName !: string;

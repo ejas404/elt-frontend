@@ -7,8 +7,8 @@ import { SocketService } from '../../../core/service/socket/socket.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrl: './profile.component.scss',
-  changeDetection : ChangeDetectionStrategy.OnPush
+  styleUrl: './profile.component.scss'
+
 })
 export class ProfileComponent {
   destroy$ = new Subject<void>()
