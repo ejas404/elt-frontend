@@ -1,6 +1,28 @@
-# Frontend
+# Init
+
+# Role-Based Chat Application
+
+This is a role-based chat application built with Angular. The application allows users to chat with each other in real-time, with different roles such as Admin, Moderator, and User. Each role has different permissions and capabilities within the application.
+
+## Features
+
+- **Real-Time Chat**: Users can send and receive messages in real-time.
+- **Role Management**: Admins can manage user roles and permissions.
+- **User Authentication**: Secure login and registration system.
+- **Message History**: Users can view chat history.
+- **Image Preview**: Users can upload and preview images in the chat.
+- **Responsive Design**: The application is responsive and works on both desktop and mobile devices.
+
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.4.
+
+## Documentation
+
+Run `npm run compodoc` to view the documentation. Navigate to `http://127.0.0.1:8080` to view the documentation.
+
+![Documentation Preview](/screenshots/documentation-overview.png)
 
 ## Development server
 

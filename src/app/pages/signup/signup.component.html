@@ -1,0 +1,67 @@
+<section>
+    <mat-card class="login-container">
+        <div class="title">
+            <h1>SignUp</h1>
+        </div>
+
+        <!-- signup-form-template  -->
+
+        <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
+            <div class="login-form">
+                <input type="text" formControlName="fullName" placeholder="Name" class="input-field">
+                <div class="error" *ngIf="signUpForm.get('fullName')?.invalid && signUpForm.get('fullName')?.touched">
+                    <div *ngIf="signUpForm.get('fullName')?.errors?.['required']">Name is required.</div>
+                    <div *ngIf="signUpForm.get('fullName')?.errors?.['pattern']">Name must be 3 to 10 letters long</div>
+                </div>
+
+                <input type="text" formControlName="userId" placeholder="User Id" class="input-field">
+                <div class="error" *ngIf="signUpForm.get('userId')?.invalid && signUpForm.get('userId')?.touched">
+                    <div *ngIf="signUpForm.get('userId')?.errors?.['required']">User id is required.</div>
+                    <div *ngIf="signUpForm.get('userId')?.errors?.['pattern']">User id must be lowecase <br> 3 to 10 letters long <br> can contian digits and charecters like "&#64;" or "#"</div>
+                </div>
+
+                
+                <input type="password" formControlName="password" placeholder="Password" class="input-field">
+                <div class="error" *ngIf="signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched">
+                    <div *ngIf="signUpForm.get('password')?.errors?.['required']">Password is required.</div>
+                    <div *ngIf="signUpForm.get('password')?.errors?.['pattern']">Password must be exactly 8 characters
+                        long,
+                        and include at least one letter and one number. </div>
+                    </div>
+
+                <input type="password" formControlName="confirmPassword" placeholder="Confirm Password"
+                class="input-field">
+                <div class="error"
+                *ngIf="signUpForm?.errors?.['PasswordNoMatch'] && signUpForm.get('confirmPassword')?.touched">
+                <div *ngIf="signUpForm.get('confirmPassword')?.errors?.['required'] else doesNot">Password is
+                    required.
+                </div>
+                <ng-template #doesNot>
+                    <div>Password does not match.</div>
+                </ng-template>
+            </div>
+
+            <mat-form-field class="example-full-width input-field">
+                <mat-label>Date of Birth</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="birthdate" >
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker">
+                    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                </mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <div class="error" *ngIf="signUpForm.get('birthdate')?.invalid && signUpForm.get('birthdate')?.touched">
+                <div *ngIf="signUpForm.get('birthdate')?.errors?.['required']">Date of birth is required.</div>
+            </div>
+
+                <div class="button-container">
+                    <button type="submit" [disabled]="signUpForm.invalid" class="register-button {{signUpForm.invalid ? '':'active-btn' }}">Register</button>
+                    <p class="page-text" routerLink="/login">already have an account ? <span>Login</span>.</p>
+                </div>
+            </div>
+        </form>
+
+        <!-- /signup-form-template  -->
+
+    </mat-card>
+</section>

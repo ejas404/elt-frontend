@@ -1,0 +1,110 @@
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $primary;
+}
+
+.error {
+    color: red;
+}
+
+.login-container {
+    background-color: $secondary;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    width: 400px;
+
+    .title {
+        text-align: center;
+        color: $light-text;
+    }
+
+}
+
+.login-form {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    border: 1px solid #333;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    background-color: #333;
+    color: #fff;
+    outline: none;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.input-field:hover,
+.input-field:focus {
+    border-color: $light-blue;
+}
+
+.button-container {
+    margin-top: 10px;
+    text-align: center;
+
+    .page-text {
+        color: $light-text;
+        font-size: 1rem;
+
+
+        span {
+            color: $light-blue;
+            cursor: pointer;
+        }
+    }
+
+}
+
+.login-button,
+.register-button {
+    padding: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.active-btn {
+    cursor: pointer;
+}
+
+.login-button {
+    background-color: $light-blue;
+    color: #fff;
+    margin-left: 5px;
+}
+
+.login-button:hover {
+    background-color: $hover-blue;
+}
+
+.register-button {
+    background-color: transparent;
+    border: 1px solid $light-blue;
+    /* Border warna button login */
+    color: $light-blue;
+    margin-right: 5px;
+}
+
+.register-button:hover {
+    border-color: $hover-blue;
+    /* Warna border saat tombol di-hover */
+    color: $hover-blue;
+}
+
+@media screen and (max-width: 600px) {
+    .login-container {
+        width: 90%;
+    }
+}

@@ -1,0 +1,49 @@
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="tBody" matSort>
+
+        <!-- Sl No Column -->
+        <ng-container  matColumnDef="slNo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Sl No </th>
+            <td mat-cell *matCellDef="let element; let i = index"> {{ i + 1 }} </td>
+        </ng-container>
+
+        <!-- Dynamic Columns -->
+        <ng-container *ngFor="let head of tHeaders" [matColumnDef]="head.tBodyKey">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{head.title}} </th>
+            <td mat-cell *matCellDef="let element"> {{element[head.tBodyKey]}} </td>
+        </ng-container>
+
+        <!-- Header and Row Declarations -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+</div>
+
+
+
+
+
+
+<!-- <table >
+    <thead>
+        <tr>
+            <th >Sl No</th>
+            <ng-container *ngFor="let head of tHeaders">
+                <th >{{head.title}}
+                </th>
+
+            </ng-container>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of tBody; index as i ">
+            <td >{{ i + 1 }}</td>
+
+            <ng-container *ngFor="let head of tHeaders">
+                <td>{{row[head.tBodyKey] }}</td>
+            </ng-container>
+
+        </tr>
+    </tbody>
+</table> -->
