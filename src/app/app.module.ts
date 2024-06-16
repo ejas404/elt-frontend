@@ -9,6 +9,7 @@ import { CustomModule } from './modules/custom/custom.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthenticationModule } from './modules/auth/authentication.module';
 import { AuthTokenInterceptor } from './core/interceptor/auth-token';
+
 @NgModule({
   declarations: [
     AppComponent

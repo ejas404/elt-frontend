@@ -1,0 +1,24 @@
+section{
+    height:calc(100vh - 65px);
+}
+
+mat-sidenav-container{
+    height: 100%;
+}
+
+mat-sidenav, mat-sidenav-content{
+    padding: 1rem;
+}
+
+mat-sidenav {
+    background-color: gray;
+    color : black;
+    width: 25%;
+}
+
+mat-sidenav-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}

@@ -7,17 +7,31 @@ import { RouterModule } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
 import { UserProfileService } from '../../core/service/user/user-profile.service';
+import { BooksComponent } from '../../pages/user/books/books.component';
+import { AddBookComponent } from '../../pages/user/add-book/add-book.component';
+import { ListBooksComponent } from '../../pages/user/list-books/list-books.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatButtonModule } from '@angular/material/button';
+
 
 
 export const routes = [
-  {path : '', component : UserDashboardComponent}
+  { path: '', component: UserDashboardComponent },
+  { path: 'books', component: BooksComponent }
 ]
 
 
 @NgModule({
   declarations: [
     ProfileComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    BooksComponent,
+    AddBookComponent,
+    ListBooksComponent,
   ],
   imports: [
     CommonModule,
@@ -25,8 +39,14 @@ export const routes = [
     RouterModule,
     RouterModule.forChild(routes),
     MatSidenavModule,
-    MatCardModule
+    MatCardModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonModule
   ],
-  providers : [UserProfileService]
+  providers: [UserProfileService]
 })
 export class UserModule { }
