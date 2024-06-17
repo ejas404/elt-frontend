@@ -1,7 +1,10 @@
 import { UserData } from "../app/core/interfaces/auth.interface";
 import { decodeUserToken } from "../app/core/utils/jwt.helper";
 
-const SERVER_URL = 'https://uvlib.onrender.com'
+// const SERVER_URL = 'http://localhost:3344'
+
+const SERVER_URL="https://uvlib.onrender.com"
+
 const userData = decodeUserToken()
 
 export const environment = {

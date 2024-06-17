@@ -1,5 +1,5 @@
 <mat-toolbar class="navbar">
-    <div>Libuv</div>
+    <div>UvLib</div>
     <div class="menus">
         <ng-container *ngIf="role == 'User'">
             <span *ngFor="let each of menu" routerLink="{{each.path}}" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact : true}" >{{each.title}}</span>
