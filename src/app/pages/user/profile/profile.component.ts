@@ -1,8 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {  Component } from '@angular/core';
 import { AuthService } from '../../../core/service/auth/auth.service';
 import { UserDetailsTableModel } from '../../../core/interfaces/table.interface';
-import { Subject,takeUntil } from 'rxjs';
-import { SocketService } from '../../../core/service/socket/socket.service';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-profile',
