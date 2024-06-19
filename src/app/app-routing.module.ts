@@ -8,8 +8,8 @@ import { adminGuard } from './core/guards/admin/admin.guard';
 import { authGuard } from './core/guards/auth/auth.guard';
 
 const routes: Routes = [
-  { path: "login", component: LoginComponent },
-  { path: "signup", component: SignupComponent },
+  { path: "login", component: LoginComponent, title : "UvLib"},
+  { path: "signup", component: SignupComponent, title : "UvLib" },
   {
     path: "profile",
     component: ProfileComponent,

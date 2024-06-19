@@ -2,7 +2,7 @@ export interface CreateBook {
     title: string;
     description?: string; 
     authorId: string;
-    publishedDate: Date;
+    publishedDate:string;
 }
 
 export interface ResponseBook {

@@ -11,8 +11,8 @@
             <span>Published on : {{each.publishedDate | dateConvert }}</span>
         </div>
         <div>
-            <button (click)="deleteBook(each.id)" >delete</button>
-            <button (click)="callUpdate(each.id)">update</button>
+            <mat-icon (click)="deleteBook(each.id)" aria-hidden="false" aria-label="delete book icon" fontIcon="delete" class="btn"></mat-icon>
+            <mat-icon (click)="callUpdate(each.id)" aria-hidden="false" aria-label="edit book icon" fontIcon="edit" class="btn"></mat-icon>
         </div>
     </div>
 </section>

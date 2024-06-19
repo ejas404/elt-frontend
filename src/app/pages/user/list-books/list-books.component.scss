@@ -48,10 +48,16 @@ section {
     border: 1px solid;
     border-radius: 0.3rem;
     box-shadow: 3px 3px 0 3px #222;
-    cursor: crosshair;
     overflow: hidden;
     align-content: center;
     display: flex;
     justify-content: space-between;
 }
 
+.btn{
+    cursor: pointer;
+
+    &:hover{
+        scale: 1.2;
+    }
+}

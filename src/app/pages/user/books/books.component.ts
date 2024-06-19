@@ -25,9 +25,9 @@ export class BooksComponent {
     fetchBooks(id  : string){
       this.bookService.getAuthorBooks(id).subscribe({
         next : res => {
-          console.log(res)
           this.books = res;
         }
       })
     }
+
 }

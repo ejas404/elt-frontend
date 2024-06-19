@@ -1,6 +1,6 @@
 <section>
   <div class="author-details">
-      <h1>{{userData.fullName}}</h1>
+      <h1>{{userData.fullName | titlecase}}</h1>
       <p>{{userData.userId}}</p>
   </div>
 
@@ -33,7 +33,7 @@
       </mat-form-field> <br>
 
       <button mat-raised-button [disabled]="form.invalid" color="primary" type="submit">{{isUpdate?'Update':'Submit'}}</button>
-      <button *ngIf="isUpdate" (click)="cancelUpdate()" mat-raised-button  color="warn">Cancel</button>
+      <button *ngIf="isUpdate" (click)="cancelUpdate()" mat-raised-button class="cancel-btn"  color="warn">Cancel</button>
     </form>
   </div>
 </section>
