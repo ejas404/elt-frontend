@@ -2,11 +2,16 @@
   <div class="author-details">
       <h1>{{userData.fullName | titlecase}}</h1>
       <p>{{userData.userId}}</p>
+      <p class="biography">{{userData.biography || '" Here comes the biography..... "' }}</p>
   </div>
 
   <!-- form for creating book for the author -->
-  <div>
-    <h3>Add New Book</h3>
+  <div class="add-section">
+    @if(!isUpdate){
+      <h3>Add New Book</h3>
+    }@else{
+      <h3>Update Book</h3>
+    }
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <mat-form-field class="example-full-width">
         <mat-label>Title</mat-label>

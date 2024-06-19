@@ -47,6 +47,9 @@ export class SignupComponent {
     const formData : SignUpAuth =  {...this.signUpForm.value}
     formData['birthdate'] = birthdate.toISOString()
 
+    console.log(formData);
+    return
+
     this.authService.signUp(formData)
     .pipe(take(1))
     .subscribe({
