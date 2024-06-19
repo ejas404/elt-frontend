@@ -32,8 +32,9 @@ export class SignupComponent {
       userId: new FormControl('', [Validators.required , Validators.pattern('^[a-z0-9@#]{3,10}$')]),
       fullName: new FormControl('', [Validators.required]),
       birthdate: new FormControl('',[Validators.required]),
-      password: new FormControl('', [Validators.required,  Validators.pattern('^(?=.*[a-z])(?=.*\\d)[a-z\\d]{8}$')]),
-      confirmPassword: new FormControl('', Validators.required)
+      password: new FormControl('', [Validators.required,  Validators.pattern('^(?=.*[a-z])(?=.*\\d)[a-z\\d!@#$&*]{8,16}$')]),
+      confirmPassword: new FormControl('', Validators.required),
+      biography: new FormControl('',[Validators.maxLength(250)])
     },
       {
         validators: confirmPasswordValidator
